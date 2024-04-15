@@ -4,7 +4,6 @@ public class Question4 {
     public static void main(String[] args) {
         
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter a number:");
         int n = Integer.parseInt(in.nextLine());
 
         // Loop for each line of the triangle
