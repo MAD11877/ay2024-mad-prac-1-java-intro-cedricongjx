@@ -11,10 +11,10 @@ public class Question3
      */
 
     Scanner in = new Scanner(System.in);
-    int num = in.nextInt(); // User is expected to enter an integer immediately upon execution
+    int num = in.nextInt(); 
     int result = num * num;
     System.out.println(result);
     
-    in.close(); // Good practice to close the scanner
+    in.close();
   }
 }
