@@ -1,32 +1,45 @@
 import java.util.Scanner;
 
-public class Question5
-{
-  public static void main(String[] args)
-  {
-    /**
-     * Prompt the user for number. This input indicates the number of integers the user will be entering next. 
-     * Print out the mode (highest occurrence) from the set of integers. 
-     *    e.g.
-     *     > 5
-     *     > 2
-     *     > 4
-     *     > 1
-     *     > 3
-     *     > 4
-     *     4
-     * 
-     *    e.g.
-     *     > 4
-     *     > 2
-     *     > 2
-     *     > 3
-     *     > 3
-     *     2
-     * Hint: Use a loop to get input. Use another 2 loops to find the mode
-     */
-     
-    Scanner in = new Scanner(System.in);
-    
-  }
+public class Question5 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter number of integers: ");
+        int num = in.nextInt();
+
+        // This array will hold the integers input by the user.
+        int[] arr = new int[num];
+
+        // Read integers from the user.
+        for (int i = 0; i < num; i++) {
+            arr[i] = in.nextInt();
+        }
+
+        // Using a HashMap to count the frequency of each number.
+        HashMap<Integer, Integer> frequencyMap = new HashMap<>();
+        for (int number : arr) {
+            if (frequencyMap.containsKey(number)) {
+                frequencyMap.put(number, frequencyMap.get(number) + 1);
+            } else {
+                frequencyMap.put(number, 1);
+            }
+        }
+
+        // Determining the mode by finding the entry with the highest frequency.
+        int mode = arr[0];  // Start with the first element.
+        int maxCount = frequencyMap.get(mode);
+
+        for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                mode = entry.getKey();
+            }
+        }
+
+        // Printing the mode
+        System.out.println(mode);
+
+        // Close the scanner
+        in.close();
+    }
 }
+
