@@ -17,7 +17,7 @@ public class Question2
                 double bmi = weight / (height * height);
 
                 // Print only the BMI result formatted to two decimal places
-                System.out.printf("%.2f\n", bmi);
+                System.out.printf("", bmi);
             } else {
                 System.out.println("Height must be greater than zero.");
             }
