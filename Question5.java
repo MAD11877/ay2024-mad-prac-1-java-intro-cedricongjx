@@ -14,7 +14,7 @@ public class Question5 {
             arr[i] = in.nextInt();
         }
 
-        // Using a HashMap to count the frequency of each number.
+       
         HashMap<Integer, Integer> frequencyMap = new HashMap<>();
         for (int number : arr) {
             if (frequencyMap.containsKey(number)) {
@@ -24,7 +24,7 @@ public class Question5 {
             }
         }
 
-        // Determining the mode by finding the entry with the highest frequency.
+      
         int mode = arr[0];  // Start with the first element.
         int maxCount = frequencyMap.get(mode);
 
