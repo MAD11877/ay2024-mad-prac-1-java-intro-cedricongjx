@@ -1,27 +1,20 @@
 import java.util.Scanner;
 
-public class Question2
-{
-    public static void main(String[] args)
-    {
-        
-        Scanner in = new Scanner(System.in);
+public class Question2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        // Prompt the user for height in meters
-        System.out.println("Enter your height in meters:");
-        double height = in.nextDouble();
+        // Directly prompt for height and weight
+        double height = scanner.nextDouble();  // User inputs height in meters
+        double weight = scanner.nextDouble();  // User inputs weight in kilograms
 
-        // Prompt the user for weight in kilograms
-        System.out.println("Enter your weight in kilograms:");
-        double weight = in.nextDouble();
-
-        // Calculate BMI: BMI = weight (kg) / (height (m) * height (m))
+        // Calculate BMI
         double bmi = weight / (height * height);
 
-        // Print out the BMI
-        System.out.printf("Your BMI is: ", bmi);
-
        
-        in.close();
+        System.out.printf("%.2f\n", bmi);
+
+     
+        scanner.close();
     }
 }
